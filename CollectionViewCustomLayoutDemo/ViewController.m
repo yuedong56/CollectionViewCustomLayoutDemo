@@ -39,25 +39,24 @@
     
     LYCollectionViewLayout *layout = [[LYCollectionViewLayout alloc] init];
     layout.delegate = self;
-    [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+//    [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
     layout.minimumInteritemSpacing = 5;
     layout.minimumLineSpacing = 4;
     
-    _collectView = [[UICollectionView alloc] initWithFrame:CGRectMake(10, 10, 300, 300)
+    _collectView = [[UICollectionView alloc] initWithFrame:CGRectMake(10, 100, 300, 300)
                                       collectionViewLayout:layout];
     _collectView.backgroundColor = [UIColor orangeColor];
     [_collectView registerClass:[LYCollectionViewCell class] forCellWithReuseIdentifier:kCellReuseIdentifier];
     _collectView.delegate = self;
     _collectView.dataSource = self;
-    _collectView.showsHorizontalScrollIndicator = NO;
+    _collectView.showsHorizontalScrollIndicator = YES;
     
     [self.view addSubview:_collectView];
 }
 
 
 #pragma mark - UICollectionViewDelegate & UICollectionViewDataSource
-#pragma mark - UICollectionViewDataSource & UICollectionViewDelegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.models.count;

@@ -49,12 +49,12 @@
     return (self.itemAttributes)[indexPath.item];
 }
 
-- (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
-{
-    return [self.itemAttributes filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(UICollectionViewLayoutAttributes *evaluatedObject, NSDictionary *bindings) {
-        return CGRectIntersectsRect(rect, [evaluatedObject frame]);
-    }]];
-}
+//- (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
+//{
+//    return [self.itemAttributes filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(UICollectionViewLayoutAttributes *evaluatedObject, NSDictionary *bindings) {
+//        return CGRectIntersectsRect(rect, [evaluatedObject frame]);
+//    }]];
+//}
 
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
 {
